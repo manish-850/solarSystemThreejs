@@ -34,25 +34,29 @@ This project is a **3D Solar System Simulation** built using **Three.js**. It vi
 ### 1. Clone the repository
 ```bash
 git clone https://github.com/manish-850/solarSystemThreejs.git
+```
+
+### 2. Navigate to folder
+```bash
 cd solarSystemThreejs
 ```
 
-### 2. Install dependencies
+### 3. Install dependencies
 ```bash
 npm install
 ```
 
-### 3. Run the development server
+### 4. Run the development server
 ```bash
 npm run dev
 ```
 
-### 4. Build for production
+### 5. Build for production
 ```bash
 npm run build
 ```
 
-### 5. Preview the production build
+### 6. Preview the production build
 ```bash
 npm run preview
 ```

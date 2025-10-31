@@ -23,6 +23,12 @@ This project is a **3D Solar System Simulation** built using **Three.js**. It vi
 
 ---
 
+## 📸 Preview
+
+![preview gif](./public/preview.gif)
+
+---
+
 ## 🪐 Setup Instructions
 
 ### 1. Clone the repository

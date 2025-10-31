@@ -13,17 +13,17 @@ const geometry = new THREE.SphereGeometry(1, 32, 32);
 const textureLoader = new THREE.TextureLoader();
 
 // Create materials for all planets
-const sunTexture = textureLoader.load('/src/2k_sun.jpg');
-const moonTexture = textureLoader.load('/src/moon.jpeg');
-const mercuryTexture = textureLoader.load('/src/2k_mercury.jpeg');
-const venusTexture = textureLoader.load('/src/venus.webp');
-const earthTexture = textureLoader.load('/src/2k_earth_daymap.jpg');
-const marsTexture = textureLoader.load('/src/2k_mars.jpg');
-const jupiterTexture = textureLoader.load('/src/jupiter.jpg');
-const saturnTexture = textureLoader.load('/src/saturn.jpeg');
-const uranusTexture = textureLoader.load('/src/uranus.jpeg');
-const neptuneTexture = textureLoader.load('/src/neptune.jpg');
-const ringTexture = textureLoader.load('/src/saturn_ring.png');
+const sunTexture = textureLoader.load('./2k_sun.jpg');
+const moonTexture = textureLoader.load('./moon.jpeg');
+const mercuryTexture = textureLoader.load('./2k_mercury.jpeg');
+const venusTexture = textureLoader.load('./venus.webp');
+const earthTexture = textureLoader.load('./2k_earth_daymap.jpg');
+const marsTexture = textureLoader.load('./2k_mars.jpg');
+const jupiterTexture = textureLoader.load('./jupiter.jpg');
+const saturnTexture = textureLoader.load('./saturn.jpeg');
+const uranusTexture = textureLoader.load('./uranus.jpeg');
+const neptuneTexture = textureLoader.load('./neptune.jpg');
+const ringTexture = textureLoader.load('./saturn_ring.png');
 
 // planet details
 const planetDetails = [

@@ -254,6 +254,7 @@ function animate() {
     planet.position.z = planetDetails[index].distance * Math.sin(planet.rotation.y/5);
 
     planet.children.forEach((moon, mIndex) => {
+        monn.rotation.z=THREE.MathUtils.degToRad(23.5); // tilt the planet
         moon.rotation.y += planetDetails[index].moons[mIndex].speed*10;
         moon.position.x = planetDetails[index].moons[mIndex].distance * Math.cos(moon.rotation.y/10);
         moon.position.z = planetDetails[index].moons[mIndex].distance * Math.sin(moon.rotation.y/10);

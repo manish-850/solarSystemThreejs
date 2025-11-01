@@ -33,6 +33,7 @@ const planetDetails = [
     speed: 0.008, // Orbital speed
     color: 0x808080, // Gray
     material: mercuryTexture,
+    tilt: 0.03, // degrees
     moons: []
   },
   {
@@ -42,6 +43,7 @@ const planetDetails = [
     speed: 0.007,
     color: 0xFAD470, // Light orange/yellow
     material: venusTexture,
+    tilt: 177.4, // retrograde rotation (spins opposite direction)
     moons: []
   },
   {
@@ -51,6 +53,7 @@ const planetDetails = [
     speed: 0.006,
     color: 0x4B6B95, // Blue
     material: earthTexture,
+    tilt: 23.5,
     moons: [
       {
         name: 'Moon',
@@ -68,6 +71,7 @@ const planetDetails = [
     speed: 0.005,
     color: 0xDD4428, // Red
     material: marsTexture,
+    tilt: 25.2,
     moons: [
       {
         name: 'Phobos',
@@ -92,6 +96,7 @@ const planetDetails = [
     speed: 0.004,
     color: 0xD8CA9D, // Light brown
     material: jupiterTexture,
+    tilt: 3.1,
     moons: [
       {
         name: 'Io',
@@ -107,20 +112,6 @@ const planetDetails = [
         speed: 0.013,
         color: 0xFFFFFF
       }
-      // {
-      //   name: 'Ganymede',
-      //   radius: 0.3,
-      //   distance: 6.5,
-      //   speed: 0.011,
-      //   color: 0xC8C8C8
-      // },
-      // {
-      //   name: 'Callisto',
-      //   radius: 0.2,
-      //   distance: 8.5,
-      //   speed: 0.009,
-      //   color: 0x808080
-      // }
     ]
   },
   {
@@ -130,6 +121,7 @@ const planetDetails = [
     speed: 0.003,
     color: 0xEAD6B8, // Light gold
     material: saturnTexture,
+    tilt: 26.7,
     moons: [
       {
         name: 'Titan',
@@ -147,6 +139,7 @@ const planetDetails = [
     speed: 0.002,
     color: 0xB1E5EA, // Light blue
     material: uranusTexture,
+    tilt: 97.8, // rolls on its side
     moons: [
       {
         name: 'Titania',
@@ -164,6 +157,7 @@ const planetDetails = [
     speed: 0.001,
     color: 0x3F54BA, // Deep blue
     material: neptuneTexture,
+    tilt: 28.3,
     moons: [
       {
         name: 'Triton',
@@ -176,6 +170,7 @@ const planetDetails = [
   }
 ];
 
+
 // planets and moons creation
 const planetMeshes = planetDetails.map((planet,index) => {
 
@@ -186,9 +181,11 @@ const planetMeshes = planetDetails.map((planet,index) => {
   // set position based on distance and scale based on radius
   planetMesh.position.x = planet.distance;
   planetMesh.scale.setScalar(planet.radius);
+  planetMesh.rotation.z = THREE.MathUtils.degToRad(planet.tilt);   // tilt the planet
 
   // add to scene
   scene.add(planetMesh);
+
 if (planet.moons.length === 0) return planetMesh;
 
   // create moons
@@ -201,6 +198,7 @@ if (planet.moons.length === 0) return planetMesh;
     // set position based on distance and scale based on radius
     moonMesh.position.x = moon.distance;
     moonMesh.scale.setScalar(moon.radius);
+    moonMesh.rotation.z = THREE.MathUtils.degToRad(23.5); // tilt the moon
 
     // add to planet
     planetMesh.add(moonMesh);
@@ -248,13 +246,11 @@ function animate() {
   window.requestAnimationFrame(animate);
   sun.rotation.y += 0.01;
   planetMeshes.forEach((planet, index) => {
-    planet.rotation.z=THREE.MathUtils.degToRad(23.5); // tilt the planet
     planet.rotation.y += planetDetails[index].speed*5;
     planet.position.x = planetDetails[index].distance * Math.cos(planet.rotation.y/5);
     planet.position.z = planetDetails[index].distance * Math.sin(planet.rotation.y/5);
 
     planet.children.forEach((moon, mIndex) => {
-        moon.rotation.z=THREE.MathUtils.degToRad(23.5); // tilt the moon
         moon.rotation.y += planetDetails[index].moons[mIndex].speed*10;
         moon.position.x = planetDetails[index].moons[mIndex].distance * Math.cos(moon.rotation.y/10);
         moon.position.z = planetDetails[index].moons[mIndex].distance * Math.sin(moon.rotation.y/10);

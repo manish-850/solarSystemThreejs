@@ -1,10 +1,10 @@
-# Solar System Simulation 🌌
+# Solar System Simulation
 
 This project is a **3D Solar System Simulation** built using **Three.js**. It visually represents the planets revolving around the Sun, complete with realistic textures, lighting, and orbital motion.
 
 ---
 
-## 🚀 Features
+## Features
 
 - Realistic 3D planets with textures.
 - Orbiting motion for all planets and their moons.
@@ -14,7 +14,7 @@ This project is a **3D Solar System Simulation** built using **Three.js**. It vi
 
 ---
 
-## 🧠 Tech Stack
+## Tech Stack
 
 - **Three.js** – 3D rendering engine.
 - **Vite** – Build tool for fast development.
@@ -23,13 +23,13 @@ This project is a **3D Solar System Simulation** built using **Three.js**. It vi
 
 ---
 
-## 📸 Preview
+## Preview
 
 ![preview gif](./public/preview.gif)
 
 ---
 
-## 🪐 Setup Instructions
+## Setup Instructions
 
 ### 1. Clone the repository
 ```bash
@@ -63,7 +63,7 @@ npm run preview
 
 ---
 
-## 🌞 How It Works
+## How It Works
 
 - The **Sun** is rendered using `MeshBasicMaterial` (so it glows without needing external light).
 - A **PointLight** is placed at the Sun’s center to illuminate other planets.
@@ -80,23 +80,6 @@ npm run preview
 
 ---
 
-## 🖼️ Textures Used
-
-| Object | Texture File |
-|--------|---------------|
-| Sun | `2k_sun.jpg` |
-| Mercury | `2k_mercury.jpeg` |
-| Venus | `venus.webp` |
-| Earth | `2k_earth_daymap.jpg` |
-| Mars | `2k_mars.jpg` |
-| Jupiter | `jupiter.jpg` |
-| Saturn | `saturn.jpeg` |
-| Uranus | `uranus.jpeg` |
-| Neptune | `neptune.jpg` |
-| Moon | `moon.jpeg` |
-
----
-
 ## 🧑‍💻 Author
 
 **Manish**  
@@ -107,7 +90,3 @@ _Computer Science Student | Web Developer_
 ## 🪩 License
 
 This project is open-source and available under the **MIT License**.
-
----
-
-> Built with love and curiosity about the cosmos.

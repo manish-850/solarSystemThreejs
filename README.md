@@ -72,7 +72,7 @@ npm run preview
 
 ---
 
-## 🔧 Controls
+## Controls
 
 - **Left-click + drag** → Rotate camera.
 - **Scroll** → Zoom in/out.
@@ -80,13 +80,13 @@ npm run preview
 
 ---
 
-## 🧑‍💻 Author
+## Author
 
 **Manish**  
 _Computer Science Student | Web Developer_
 
 ---
 
-## 🪩 License
+## License
 
 This project is open-source and available under the **MIT License**.
